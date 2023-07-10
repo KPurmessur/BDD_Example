@@ -30,13 +30,14 @@ public class SearchStepsMultiple {
 
     @Then("^product with name (.*) should be displayed$")
     public void productWithNameShouldBeDisplayed(String productName) {
-        System.out.println("Step 3: product " + productName + " is displayed");
         searchMultiple = new SearchMultiple();
         List<String> names = searchMultiple.displayProducts(product);
         if (names == null || names.isEmpty()) {
             throw new RuntimeException("Product Listed not found in search catalog");
         } else {
-            System.out.println("Searched products are: " + names);
+            System.out.println("Step 3: product " + productName + " is displayed");
+            System.out.println("");
+            System.out.println("Search catalog contains: " + names);
         }
     }
 
